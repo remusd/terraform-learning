@@ -1,0 +1,9 @@
+Highly available Wordpress website hosted on EC2 instances
+
+Two public subnets in different zones for the ALB. One bastion host for ssh in each subnet
+Two private subnets in different zones for the Web/App servers where Wordpress will be installed
+Two private subnets in different zones for the RDS DB instances
+The EC2 instances in WEB group will mount an EFS volume, where Wordpress is installed
+The ALB balances requests for port 80 to WEB instances in an autoscaling group
+A Cloudfront distribution sits in front of the ALB, to cache and speed up content delivery
+RDS can be used in the Wordpress initial setup as a data store for the user credentials
