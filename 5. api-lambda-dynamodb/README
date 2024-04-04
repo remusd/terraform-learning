@@ -1,0 +1,15 @@
+Serverless REST API with DynamoDB backend
+
+RESTful API with AWS API Gateway integration allowing POST requests using curl.
+The API calls a lambda function that parses the POST resource and inserts object into DynamoDB table
+
+To test you can open API Gateway > Select the API > Resources > POST > Test
+Or you can run the following command:
+
+curl -v -X POST "https://XXXXXXXX.execute-api.us-east-1.amazonaws.com/test/employee" -H 'Content-Type: application/json' -d '{
+"employee_id": "c12345",
+"name": "John Smith",
+"business_unit": "BU4",
+"cubicle_no": 6
+}'
+
